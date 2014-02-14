@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Home</title>
+			<link rel="stylesheet" href="css/themes/cg-theme.min.css" />
+			<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+			<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+			<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+			<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+		</head>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header">
+			<h1>Context View</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			    <div data-role="collapsible">
+			        <h3>Monitor</h3>
+			    <p>I'm the collapsible content for section 1</p>
+			    </div>
+			    <div data-role="collapsible">
+			        <h3>Available Topics</h3>
+					<ul data-role="listview">
+					<form>
+						<div class="ui-field-contain">
+							<fieldset data-role="controlgroup">
+								<input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+								<label for="checkbox-v-1a">/raw/location/gps</label>
+								<input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+								<label for="checkbox-v-1b">/raw/vision/cam</label>
+							</fieldset>
+						</div>
+					</form>
+			    </div>
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<h4>Rolling Meadows</h4>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+
+</body>
+</html>
