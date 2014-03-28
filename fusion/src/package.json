@@ -1,0 +1,17 @@
+{
+  "name": "fusion",
+  "version": "0.1.0",
+  "description": "Modules that process MQTT sensor data to provide other signals of interest.",
+  "main": "mqtt-to-console.njs",
+  "scripts": {
+    "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+  },
+  "repository": "https://github.com/finson/foray.git",
+  "keywords": [
+    "node.js",
+    "MQTT",
+  ],
+  "author": "Doug Johnson",
+  "license": "LGPL-3.0",
+  "readmeFilename": "README.md"
+}
