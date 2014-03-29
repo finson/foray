@@ -11,7 +11,7 @@ var nopt = require("nopt");;
 var knownOpts = { "input" : String, "topic" : String, "-verbose" : Boolean};
 var parsed = nopt(knownOpts);
 
-console.log(parsed);
+//console.log(parsed);
 
 if (typeof parsed.input == 'undefined' || (typeof parsed.topic == 'undefined')) {
     console.error(' Usage >%s %s %j',process.argv[0],process.argv[1], knownOpts);
