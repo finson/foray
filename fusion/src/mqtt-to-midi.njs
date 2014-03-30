@@ -3,15 +3,16 @@
 
 // The incoming MQTT messages are assumed to be valid JSON objects.
 
-var nopt = require("nopt");;
+var nopt = require("nopt");
 var mqtt = require('mqtt');
+var midi = require('midi');
 
 // parse and remember command line arguments
 
-var knownOpts = { 
-	"input" : String, 
-	"output" : String, 
-	"topic" : String, 
+var knownOpts = {
+	"input" : String,
+	"output" : String,
+	"topic" : String,
 	"verbose" : Boolean
 	};
 var parsed = nopt(knownOpts)
