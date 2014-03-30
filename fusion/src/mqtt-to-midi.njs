@@ -32,21 +32,35 @@ var isVerbose = (typeof parsed.verbose == 'undefined') ? false : parsed.verbose;
 
 // Set local variables prior to beginning work
 
+var theClientId = 'midi-' + process.pid;
+
 // attach to data source
 
-var ttSource = mqtt.createClient(1883,theSourceBroker,{"clientId":"midi-"+theSourceBroker});
+var ttSource = mqtt.createClient(1883,theSourceBroker,{"clientId":theClientId});
 
 // attach to data sink
 
+var midiOut = new midi.output();
+var mCount = midiOut.getPortCount();
+console.log('Port count: %d',mCount);
+for (idx = 0; idx<mCount; idx++) {
+	console.log(midiOut.getPortName(idx));
+}
+if (mCount < 0) {
+	console.log('No available ports to write to.');
+process.exit(0);
+}
 
+midiOut.openPort(0);
 
 // Now set up whatever we need in order to process the source data and send it to the sink.
 
 ttSource.on('message', function processMessage(topic, message, packet) {
     if (isVerbose) {
-	console.log('Message packet received: %j',packet);
+		console.log('Message packet received: %j',packet);
     }
-    console.log('%s : %s',topic,message);
+    var obj = JSON.parse(message);
+	midiOut.sendMessage([176,22,obj.time]);
 });
 
 ttSource.subscribe(theTopic);
