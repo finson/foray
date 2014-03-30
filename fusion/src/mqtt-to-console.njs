@@ -2,9 +2,6 @@
 // dumps the messages to the console.  It is intended as a troubleshooting tool and a
 // skeleton for new fusion implementations.
 
-//require('daemon')();
-//require('fs').writeFileSync('/var/run/gpsMQTTd.pid',process.pid);
-
 // parse and remember command line arguments
 
 var nopt = require("nopt");;
