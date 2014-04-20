@@ -23,13 +23,15 @@ function onConnectionLost(responseObject) {
 };
 
 function onMessageArrived(message) {
-    console.log("onMessageArrived"+message.payloadString);
+    console.log("onMessageArrived: "+message.payloadString);
     var msgObject = JSON.parse(message.payloadString);
     if (msgObject.class === "TPV") {
+	$("#locationDevice").html(msgObject.device);
         $("#timeLocationFix").html(msgObject.time);
         $("#lat").html(msgObject.lat);
         $("#lon").html(msgObject.lon);
     } else if (msgObject.class === "ATT") {
+	$("#attitudeDevice").html(msgObject.device);
         $("#timeAttitudeFix").html(msgObject.time);
         $("#x_acceleration").html(msgObject.acc_x);
         $("#y_acceleration").html(msgObject.acc_y);
